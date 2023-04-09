@@ -20,20 +20,5 @@ package com.learn.java.arrays;
  */
 public class Prob1 {
 
-    public static void testProb1() {
-        int[] arr = {1, 2, 3, 4, 5};
-        printProds(arr);
-    }
 
-    private static void printProds(int[] arr) {
-        printProds(arr, 5);
-    }
-
-    private static void printProds(int[] arr, int start) {
-        int len = arr.length;
-        int safeKeep = arr[start];
-        for (int i = 0; i < len; i++) {
-
-        }
-    }
 }

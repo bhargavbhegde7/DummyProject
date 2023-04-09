@@ -7,4 +7,6 @@ package com.learn.java.trees.bintree;
 
 public abstract class Data implements Comparable<Data> {
     abstract void printValue();
+
+    public abstract Float getValue();
 }

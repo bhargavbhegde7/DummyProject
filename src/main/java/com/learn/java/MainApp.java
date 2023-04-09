@@ -6,13 +6,12 @@ package com.learn.java;
  *
  */
 
-import com.learn.java.mouse.KeepAlive;
 import com.learn.java.trees.bintree.BinTreeUtils;
-import java.awt.AWTException;
+
+import java.awt.*;
 
 public class MainApp {
     public static void main(String[] args) throws AWTException {
-        //BinTreeUtils.INSTANCE.testTree();
-        KeepAlive.mouseWiggle();
+        BinTreeUtils.INSTANCE.testTree();
     }
 }

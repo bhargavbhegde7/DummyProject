@@ -5,6 +5,9 @@ package com.learn.java.trees.bintree;
  *
  */
 
+import java.util.ArrayList;
+import java.util.List;
+
 public final class BinTreeUtils {
     public static BinTreeUtils INSTANCE = new BinTreeUtils();
 
@@ -22,7 +25,13 @@ public final class BinTreeUtils {
         insert(root, new DataImpl(5));
         insert(root, new DataImpl(7));
 
-        printInorder(root);
+        System.out.println("In order : " + getInOrderData(root));
+
+        /*System.out.println("Pre order : ");
+        printPreorder(root);
+
+        System.out.println("Post order : ");
+        printPostorder(root);*/
     }
 
     public Node getSampleBinTree() {
@@ -71,54 +80,101 @@ public final class BinTreeUtils {
         }
     }
 
-    public void printInorder(Node root) {
+    public List<Float> getInOrderData(Node root) {
+        List<Float> valuesArray = new ArrayList<>();
+        getInOrderData(root, valuesArray);
+        return valuesArray;
+    }
+
+    public void getInOrderData(Node root, List<Float> valuesArray) {
         if (root == null) {
             return;
         }
 
         if (root.getLeft() != null) {
-            printInorder(root.getLeft());
+            getInOrderData(root.getLeft(), valuesArray);
         }
 
-        printValue(root);
+        valuesArray.add(root.getData().getValue());
 
         if (root.getRight() != null) {
-            printInorder(root.getRight());
+            getInOrderData(root.getRight(), valuesArray);
         }
     }
 
-    public void printPostorder(Node root) {
+    public List<Float> getPostOrderData(Node root) {
+        List<Float> valuesArray = new ArrayList<>();
+        getPostOrderData(root, valuesArray);
+        return valuesArray;
+    }
+
+    public void getPostOrderData(Node root, List<Float> valuesArray) {
         if (root == null) {
             return;
         }
 
-        printValue(root);
+        valuesArray.add(root.getData().getValue());
 
         if (root.getLeft() != null) {
-            printPostorder(root.getLeft());
+            getPostOrderData(root.getLeft(), valuesArray);
         }
 
         if (root.getRight() != null) {
-            printPostorder(root.getRight());
+            getPostOrderData(root.getRight(), valuesArray);
         }
     }
 
-    public void printPreorder(Node root) {
+    public List<Float> getPreorderData(Node root) {
+        List<Float> valuesArray = new ArrayList<>();
+        getPreorderData(root, valuesArray);
+        return valuesArray;
+    }
+
+    public void getPreorderData(Node root, List<Float> valuesArray) {
         if (root == null) {
             return;
         }
 
         if (root.getLeft() != null) {
-            printPreorder(root.getLeft());
+            getPreorderData(root.getLeft(), valuesArray);
         }
 
         if (root.getRight() != null) {
-            printPreorder(root.getRight());
+            getPreorderData(root.getRight(), valuesArray);
         }
 
-        printValue(root);
+        valuesArray.add(root.getData().getValue());
     }
 
+    public void deleteNodeByData() {
+
+    }
+
+    public Node getMinimum(Node root){
+        while(root.getLeft() != null){
+            root = root.getLeft();
+        }
+
+        return root;
+    }
+
+    public Node findInorderSuccessor(Node root, Node succ, float key) {
+        /*if(root == null){
+            return succ;
+        }*/
+
+        if (key < root.getData().getValue()) {
+            return findInorderSuccessor(root.getLeft(), root, key);
+        } else if (key > root.getData().getValue()) {
+            return findInorderSuccessor(root.getRight(), succ, key);
+        } else {
+            //Equals case
+            if(root.getRight() != null){
+                return getMinimum(root.getRight());
+            }
+            return succ;
+        }
+    }
 
     public void printValue(Node node) {
         node.getData().printValue();

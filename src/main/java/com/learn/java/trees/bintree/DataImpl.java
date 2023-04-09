@@ -6,13 +6,14 @@ package com.learn.java.trees.bintree;
  */
 
 public class DataImpl extends Data {
-    private Integer value;
+    private float value;
 
-    public DataImpl(int value) {
+    public DataImpl(float value) {
         this.value = value;
     }
 
-    public Integer getValue() {
+    @Override
+    public Float getValue() {
         return value;
     }
 
