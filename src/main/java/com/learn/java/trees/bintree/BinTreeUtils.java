@@ -113,8 +113,6 @@ public final class BinTreeUtils {
             return;
         }
 
-        valuesArray.add(root.getData().getValue());
-
         if (root.getLeft() != null) {
             getPostOrderData(root.getLeft(), valuesArray);
         }
@@ -122,6 +120,8 @@ public final class BinTreeUtils {
         if (root.getRight() != null) {
             getPostOrderData(root.getRight(), valuesArray);
         }
+
+        valuesArray.add(root.getData().getValue());
     }
 
     public List<Float> getPreorderData(Node root) {
@@ -135,6 +135,8 @@ public final class BinTreeUtils {
             return;
         }
 
+        valuesArray.add(root.getData().getValue());
+
         if (root.getLeft() != null) {
             getPreorderData(root.getLeft(), valuesArray);
         }
@@ -142,8 +144,6 @@ public final class BinTreeUtils {
         if (root.getRight() != null) {
             getPreorderData(root.getRight(), valuesArray);
         }
-
-        valuesArray.add(root.getData().getValue());
     }
 
     public void deleteNodeByData() {
