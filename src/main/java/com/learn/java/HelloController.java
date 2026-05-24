@@ -14,7 +14,7 @@ public class HelloController {
     @GetMapping("/hello")
     public Map<String, Object> hello() {
         Map<String, Object> resp = new HashMap<>();
-        resp.put("message", "Hello from DummyProject");
+        resp.put("message", "Hello from DummyProject - trying out a new commit ");
         resp.put("status", "ok");
         return resp;
     }
