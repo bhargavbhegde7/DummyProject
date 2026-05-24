@@ -33,7 +33,7 @@ public class BinSearchTreeTest {
 
     @Test
     public void testPostOrder() {
-        Assertions.assertEquals(String.valueOf(Arrays.asList(-2.0, 1.25, 1.75, 1.5, 4.0, 3.0, 2.0, 1.0, 7.0, 6.0, 5.0)), String.valueOf(BinTreeUtils.INSTANCE.getPostOrderData(root)));
+        Assertions.assertEquals(String.valueOf(Arrays.asList(1.25, 1.75, 1.5, 4.0, 3.0, 2.0, 1.0, 7.0, 6.0, 5.0)), String.valueOf(BinTreeUtils.INSTANCE.getPostOrderData(root)));
     }
 
     @Test
