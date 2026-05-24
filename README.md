@@ -7,7 +7,7 @@
 REST API built with Spring Boot.
 
 [![Build Status](https://github.com/bhargavbhegde7/DummyProject/actions/workflows/maven-ci.yml/badge.svg)](https://github.com/bhargavbhegde7/DummyProject/actions)
-![Release](https://img.shields.io/github/v/release/bhargavbhegde7/DummyProject)
+![Release](https://img.shields.io/github/v/release/bhargavbhegde7/DummyProject?display_name=tag)
 ![Pre Release](https://img.shields.io/github/v/release/bhargavbhegde7/DummyProject?include_prereleases)
 ![Last Commit](https://img.shields.io/github/last-commit/bhargavbhegde7/DummyProject)
 ![Commit Activity](https://img.shields.io/github/commit-activity/m/bhargavbhegde7/DummyProject)
